@@ -10,7 +10,11 @@ function App() {
         <span>+</span>
         New Chat</div>
       </aside>
-      <section className='chatbox'></section>
+      <section className='chatbox'>
+        <div className='chat-input-holder'>
+          <textarea rows={1} className='chat-input-textarea'></textarea>
+        </div>
+      </section>
       
     </div>
   );
