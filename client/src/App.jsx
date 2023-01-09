@@ -5,8 +5,10 @@ import './normal.css';
 function App() {
   return (
     <div className="App">
-      <aside className="sidemenu">
-        <h1>Aside</h1>
+      <aside className="sidemenu">  
+      <div className='side-menu-button'>
+        <span>+</span>
+        New Chat</div>
       </aside>
       <section className='chatbox'></section>
       
