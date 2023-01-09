@@ -1,0 +1,19 @@
+{
+  "name": "chatgpt-server",
+  "version": "1.0.0",
+  "description": "This is a advanced version of CHAT-GPT made using ReactJs and OPENAI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragyadav20062002/CHATGPT-ADVANCED.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragyadav20062002/CHATGPT-ADVANCED/issues"
+  },
+  "homepage": "https://github.com/anuragyadav20062002/CHATGPT-ADVANCED#readme"
+}
