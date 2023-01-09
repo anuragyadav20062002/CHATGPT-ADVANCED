@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  display: flex;
+  background-color: #282c34; 
+  color: white;
+}
+
+.sidemenu{
+  width: 240px;
+  border: 1px solid white;
+}
+
+.chatbox{
+  flex: 1;
+  border: 1px solid white;
 }
 
 .App-logo {
@@ -36,3 +49,5 @@
     transform: rotate(360deg);
   }
 }
+
+
