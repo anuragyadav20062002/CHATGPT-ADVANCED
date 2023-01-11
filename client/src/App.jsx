@@ -17,6 +17,23 @@ async function handleSubmit(e){
 e.preventDefault();
 setChatLog([...chatLog, {user:"me", message: `${input}`}])
 setInput("");
+
+//fetch request to the api combining the chat log array of messages 
+//and sending it as an message to localhost:3000 as a post
+
+const response = await fetch("http://localhost:3080/",{
+  method: "POST",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body: JSON.stringify({
+    message: chatLog.map((message)=>message.message).join("")
+  })
+});
+ const data = await response.json();
+ setChatLog([...chatLog, {user:"gpt", message: `${data.message}`}])
+ console.log(data.message);
+
 }
 
   return ( 
