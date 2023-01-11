@@ -11,15 +11,24 @@ function App() {
   },{
     user: "me",
     message:"I want to use chatgpt today"
-  }])
+  }]);
+
+  //clear chats
+
+  function clearChat(){
+    setChatLog([])
+  }
 
 async function handleSubmit(e){
 e.preventDefault();
-setChatLog([...chatLog, {user:"me", message: `${input}`}])
+let chatLogNew = [...chatLog, {user:"me", message: `${input}`}]
 setInput("");
+setChatLog(chatLogNew)
 
 //fetch request to the api combining the chat log array of messages 
 //and sending it as an message to localhost:3000 as a post
+
+const messages = chatLogNew.map((message)=>message.message).join("\n")
 
 const response = await fetch("http://localhost:3080/",{
   method: "POST",
@@ -27,11 +36,11 @@ const response = await fetch("http://localhost:3080/",{
     "Content-Type":"application/json"
   },
   body: JSON.stringify({
-    message: chatLog.map((message)=>message.message).join("")
+    message: messages
   })
 });
  const data = await response.json();
- setChatLog([...chatLog, {user:"gpt", message: `${data.message}`}])
+ setChatLog([...chatLogNew, {user:"gpt", message: `${data.message}`}])
  console.log(data.message);
 
 }
@@ -39,7 +48,7 @@ const response = await fetch("http://localhost:3080/",{
   return ( 
     <div className="App">
       <aside className="sidemenu">  
-      <div className='side-menu-button'>
+      <div className='side-menu-button' onClick={clearChat}>
         <span>+</span>
         New Chat</div>
       </aside>
