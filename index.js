@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
 
 const app = express()
-const port = 3000
+const port = 3080
 
 app.post('/', async (req,res)=>{
 const response = await   openai.createCompletion({
