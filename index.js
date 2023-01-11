@@ -2,9 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const { Configuration, OpenAIApi } = require("openai");
+
 const configuration = new Configuration({
     organization: "org-FzZoACkC609FvLP6TJV476ZH",
-    apiKey: "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",
+    apiKey: "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" ,
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
@@ -31,6 +32,15 @@ const response = await   openai.createCompletion({
     
     message:response.data.choices[0].text
   })
+})
+
+app.get('/models', async (req,res)=>{
+const response = await openai.listEngines();
+console.log(response.data.data)
+res.json({
+  models:response.data.data
+})
+
 })
 
 app.listen(port,()=>{
