@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
     organization: "org-FzZoACkC609FvLP6TJV476ZH",
-    apiKey: "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" ,
+    apiKey: "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" ,
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();

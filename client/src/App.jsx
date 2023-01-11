@@ -63,11 +63,11 @@ const response = await fetch("http://localhost:3080/",{
       <div className='side-menu-button' onClick={clearChat}>
         <span>+</span>
         New Chat</div>
-        <div className='models'>
+        <div className='gpt-models'>
           <select>
             {
               models.map((model,index)=>(
-                <option key={model.id} value={model.id}>{model.id}</option>
+                <option key={index} value={model.id}>{model.id}</option>
               ))
             }
           </select>
